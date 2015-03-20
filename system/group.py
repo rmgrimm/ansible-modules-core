@@ -283,7 +283,7 @@ class DarwinGroup(Group):
         (rc, out, err) = self.execute_command(cmd)
         return (rc, out, err)
 
-    def group_mod(self):
+    def group_mod(self, **kwargs):
         info = self.group_info()
         if self.gid is not None and int(self.gid) != info[2]:
             cmd = [self.module.get_bin_path('dseditgroup', True)]
